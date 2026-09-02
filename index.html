@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stephen Zhang — biomedical engineering researcher working in microfluidics, immunology, and quantitative analysis.">
+  <meta name="theme-color" content="#1e1e1e">
+  <title>Stephen Zhang — Biomedical Engineering Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <div class="site-shell">
+    <header class="intro" aria-label="Introduction">
+      <div>
+        <p class="eyebrow">Biomedical engineering · Microfluidics</p>
+        <h1>Stephen Zhang</h1>
+        <p class="role">Researcher building tools for difficult biology.</p>
+        <p class="intro-copy">I design microfluidic systems, experiments, and analysis workflows that make rare biological signals easier to capture and understand.</p>
+      </div>
+
+      <nav class="section-nav" aria-label="Page sections">
+        <a href="#about" data-section="about"><span>01</span> About</a>
+        <a href="#experience" data-section="experience"><span>02</span> Experience</a>
+        <a href="#projects" data-section="projects"><span>03</span> Projects</a>
+        <a href="#writing" data-section="writing"><span>04</span> Writing</a>
+        <a href="#contact" data-section="contact"><span>05</span> Contact</a>
+      </nav>
+
+      <div class="external-links" aria-label="External links">
+        <!-- Replace these placeholder profile URLs before publishing. -->
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="resume.html">Résumé <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" aria-labelledby="about-title">
+        <p class="section-label">01 / About</p>
+        <h2 id="about-title">Engineering systems for clearer biological signals.</h2>
+        <p>I’m a biomedical engineering researcher at UC Davis working where microfluidics, immunology, and quantitative analysis meet. I’m especially interested in tools that can isolate rare cell populations without losing the biological differences that make them valuable.</p>
+        <p>My current work uses controlled shear and antigen-functionalized microchannels to study and enrich B cells by binding avidity. I also design modular hardware, automated image-analysis pipelines, and experiments that can scale from proof of concept to primary samples.</p>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-title">
+        <p class="section-label">02 / Experience</p>
+        <h2 id="experience-title">Where I’ve been building.</h2>
+        <div class="card-list">
+          <article class="card">
+            <h3>Graduate Researcher · George Lab</h3>
+            <p class="meta">2024 — Present</p>
+            <p>Developing an avidity-based microfluidic platform for capturing antigen-specific B cells under controlled shear. Work spans device design, surface chemistry, primary-cell experiments, imaging, and quantitative analysis.</p>
+          </article>
+          <article class="card">
+            <h3>Junior Specialist · UC Davis</h3>
+            <p class="meta">2022 — 2023</p>
+            <p>Supported interdisciplinary research across synthetic biology and mammary-gland biology while developing experimental, imaging, and collaboration skills.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <p class="section-label">03 / Selected projects</p>
+        <h2 id="projects-title">Selected work and systems.</h2>
+        <div class="card-list">
+          <a class="card linked-card" href="projects/#b-cell-capture">
+            <h3>Avidity-Based B-Cell Capture <span aria-hidden="true">↗</span></h3>
+            <p>Microfluidic assay using controlled wall shear and antigen-functionalized channels to enrich B cells by binding strength.</p>
+            <p class="tags">Microfluidics · Immunology · Surface chemistry</p>
+          </a>
+          <a class="card linked-card" href="projects/#modular-platform">
+            <h3>Modular High-Throughput Platform <span aria-hidden="true">↗</span></h3>
+            <p>A chiplet-based architecture that separates flow distribution from capture modules, making manufacturing and iteration more reliable.</p>
+            <p class="tags">CAD · PDMS · Resin printing · Fluidics</p>
+          </a>
+          <a class="card linked-card" href="projects/#image-analysis">
+            <h3>Automated Microscopy Analysis <span aria-hidden="true">↗</span></h3>
+            <p>An image-analysis workflow that converts multi-hour manual counting into a reproducible, two-minute pipeline.</p>
+            <p class="tags">FIJI · Python · Image segmentation · Statistics</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="writing" aria-labelledby="writing-title">
+        <p class="section-label">04 / Writing</p>
+        <h2 id="writing-title">Notes from the workbench.</h2>
+        <div class="card-list">
+          <a class="card linked-card" href="blog/#low-shear-capture">
+            <h3>Designing for Low-Shear Cell Capture <span aria-hidden="true">↗</span></h3>
+            <p class="meta">2026 · Research note</p>
+            <p>How channel geometry, surface chemistry, and flow conditions shape the assay window.</p>
+          </a>
+          <a class="card linked-card" href="blog/#modular-chiplets">
+            <h3>Why Modular Chiplets Beat One Large Mold <span aria-hidden="true">↗</span></h3>
+            <p class="meta">2026 · Engineering note</p>
+            <p>What repeated manufacturing failures taught me about separating functions into swappable modules.</p>
+          </a>
+          <a class="card linked-card" href="blog/#image-analysis">
+            <h3>From Four Hours to Two Minutes <span aria-hidden="true">↗</span></h3>
+            <p class="meta">2026 · Methods note</p>
+            <p>Building a reproducible image-analysis pipeline for microfluidic cell-capture experiments.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <p class="section-label">05 / Contact</p>
+        <h2 id="contact-title">Let’s build something useful.</h2>
+        <p>I’m interested in collaborations and roles involving microfluidics, assay development, biomedical hardware, and quantitative biological research.</p>
+        <!-- Replace the placeholder email address before publishing. -->
+        <a class="button" href="mailto:hello@your-domain.com">Start a conversation <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <footer>
+        <p>Designed in Figma and built as a lightweight static site.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
