@@ -149,20 +149,36 @@ p {
 }
 
 h1 {
-  max-width: 9ch;
+  max-width: none;
   margin: 0.8rem 0 0;
   font-size: clamp(3.1rem, 4vw, 3.5rem);
   line-height: 1.11;
   letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+h1 > span {
+  display: block;
+}
+
+.name-chinese {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--text);
+  font-size: 0.38em;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
 }
 
 .role {
-  max-width: 19ch;
+  max-width: none;
   margin: 0.8rem 0 0;
   color: var(--muted);
   font-size: 1.22rem;
   font-weight: 600;
   line-height: 1.42;
+  white-space: nowrap;
 }
 
 .intro-copy {
@@ -313,12 +329,54 @@ section > p:not(.section-label) {
   line-height: 1.65;
 }
 
-.card .meta,
-.card .tags {
+.card .meta {
   color: var(--quiet);
   font-size: 0.76rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+}
+
+.card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card .tags li {
+  padding: 0.28rem 0.68rem;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+#experience .tags li {
+  border-color: rgba(127, 191, 143, 0.32);
+  background: rgba(127, 191, 143, 0.1);
+  color: var(--accent-secondary);
+}
+
+#projects .tags li {
+  border-color: rgba(47, 180, 233, 0.32);
+  background: rgba(47, 180, 233, 0.1);
+  color: var(--accent);
+}
+
+#experience .card:hover .tags li {
+  border-color: rgba(127, 191, 143, 0.55);
+  background: rgba(127, 191, 143, 0.15);
+}
+
+#projects .card:hover .tags li,
+#projects .linked-card:focus-visible .tags li {
+  border-color: rgba(47, 180, 233, 0.55);
+  background: rgba(47, 180, 233, 0.15);
 }
 
 .linked-card {
@@ -444,14 +502,16 @@ footer {
   }
 
   h1 {
-    max-width: 8ch;
+    max-width: none;
     margin-top: 0.65rem;
     font-size: clamp(2.85rem, 13vw, 3.4rem);
     line-height: 1.08;
+    white-space: normal;
   }
 
   .role {
     font-size: 1.18rem;
+    white-space: normal;
   }
 
   .intro-copy {
