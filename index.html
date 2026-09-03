@@ -15,12 +15,18 @@
 <body>
   <a class="skip-link" href="#about">Skip to content</a>
 
+  <a class="reverse-scroll-indicator" href="mailto:sjhzhang@ucdavis.edu" aria-label="Email Stephen at sjhzhang@ucdavis.edu">
+    <span class="reverse-scroll-indicator__rule" aria-hidden="true"></span>
+    <span class="reverse-scroll-indicator__email">sjhzhang@ucdavis.edu</span>
+    <span class="reverse-scroll-indicator__rule" aria-hidden="true"></span>
+  </a>
+
   <div class="site-shell">
     <header class="intro" aria-label="Introduction">
       <div>
         <p class="eyebrow">Biomedical engineering · Microfluidics</p>
         <h1>Stephen Zhang</h1>
-        <p class="role">Researcher building tools for difficult biology.</p>
+        <p class="role">Biomedical Engineering Researcher</p>
         <p class="intro-copy">I design microfluidic systems, experiments, and analysis workflows that make rare biological signals easier to capture and understand.</p>
       </div>
 
@@ -29,23 +35,24 @@
         <a href="#experience" data-section="experience"><span>02</span> Experience</a>
         <a href="#projects" data-section="projects"><span>03</span> Projects</a>
         <a href="#writing" data-section="writing"><span>04</span> Writing</a>
-        <a href="#contact" data-section="contact"><span>05</span> Contact</a>
       </nav>
 
-      <div class="external-links" aria-label="External links">
-        <!-- Replace these placeholder profile URLs before publishing. -->
-        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-        <a href="resume.html">Résumé <span aria-hidden="true">↗</span></a>
-      </div>
+      <ul class="social-icons" aria-label="Social platforms">
+        <li><img class="social-icon" src="assets/icons/github.svg" alt="GitHub"></li>
+        <li><img class="social-icon" src="assets/icons/linkedin.png" alt="LinkedIn"></li>
+        <li><img class="social-icon" src="assets/icons/arxiv.svg" alt="arXiv"></li>
+        <li><img class="social-icon" src="assets/icons/instagram.svg" alt="Instagram"></li>
+      </ul>
     </header>
 
     <main>
-      <section id="about" aria-labelledby="about-title">
+      <section id="about" aria-label="About">
         <p class="section-label">01 / About</p>
-        <h2 id="about-title">Engineering systems for clearer biological signals.</h2>
-        <p>I’m a biomedical engineering researcher at UC Davis working where microfluidics, immunology, and quantitative analysis meet. I’m especially interested in tools that can isolate rare cell populations without losing the biological differences that make them valuable.</p>
-        <p>My current work uses controlled shear and antigen-functionalized microchannels to study and enrich B cells by binding avidity. I also design modular hardware, automated image-analysis pipelines, and experiments that can scale from proof of concept to primary samples.</p>
+        <p>Hey there! I’m Stephen. Thanks for stopping by!</p>
+        <p>I’m a bioengineer who designs microfluidic systems to explore biological questions. I especially enjoy taking an idea from an early sketch to a working experiment, with thoughtful design and rigorous science guiding each step. I’m happiest where good engineering meets a question worth answering. That’s where we can learn more about ourselves and the world around us, and perhaps make one small part of it better.</p>
+        <p>Right now, I’m a graduate researcher in the George Lab at UC Davis. My project uses controlled shear and functionalized microchannels to study and enrich B cells based on binding avidity. Along the way, I’ve developed modular, plug-and-play hardware, built automated image-analysis pipelines, and taken experiments from early models to studies with primary samples. The project has also given me plenty to share, including this poster and <a href="https://youtu.be/4XFoUoicQhY" target="_blank" rel="noopener noreferrer">this video</a>.</p>
+        <p>My path here has been anything but linear. I’ve worked in settings ranging from the back of an ambulance to student-led startups and research labs. Each stop has changed how I approach problem-solving and left me with a few good stories. Ask me about them!</p>
+        <p>Outside the lab, you can usually find me climbing 🧗, swimming 🏊, hanging out with my partner 👫, or playing social deduction games 🐺.</p>
       </section>
 
       <section id="experience" aria-labelledby="experience-title">
@@ -109,16 +116,8 @@
         </div>
       </section>
 
-      <section id="contact" aria-labelledby="contact-title">
-        <p class="section-label">05 / Contact</p>
-        <h2 id="contact-title">Let’s build something useful.</h2>
-        <p>I’m interested in collaborations and roles involving microfluidics, assay development, biomedical hardware, and quantitative biological research.</p>
-        <!-- Replace the placeholder email address before publishing. -->
-        <a class="button" href="mailto:hello@your-domain.com">Start a conversation <span aria-hidden="true">↗</span></a>
-      </section>
-
       <footer>
-        <p>Designed in Figma and built as a lightweight static site.</p>
+        <p>Designed in <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a> and coded by me in <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a>. Built with HTML, CSS, and JavaScript. All text is set in the <a href="https://rsms.me/inter/" target="_blank" rel="noopener noreferrer">Inter</a> typeface. Huge shoutout to <a href="https://brittanychiang.com/" target="_blank" rel="noopener noreferrer">Brittany Chiang</a> for inspiring this project.</p>
       </footer>
     </main>
   </div>

@@ -1,13 +1,19 @@
 :root {
   color-scheme: dark;
-  --bg: #1e1e1e;
-  --surface: #252525;
-  --surface-hover: #2b2b2b;
-  --text: #ffffff;
-  --muted: rgba(255, 255, 255, 0.7);
-  --quiet: rgba(255, 255, 255, 0.48);
-  --border: rgba(255, 255, 255, 0.16);
-  --accent: #f5f5f5;
+
+  --bg: #0d1117;
+  --surface: #131a22;
+  --surface-hover: #202b36;
+
+  --text: #f2f5f7;
+  --muted: #a8b3bf;
+  --quiet: #7b8a99;
+
+  --border: #2a3744;
+  --accent: #2fb4e9;
+  --accent-secondary: #7fbf8f;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --page-width: 1440px;
   --ease: 180ms ease;
 }
@@ -27,10 +33,17 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 18px;
   line-height: 1.68;
   -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 a {
@@ -52,6 +65,51 @@ a {
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.reverse-scroll-indicator {
+  position: fixed;
+  right: var(--indicator-right, clamp(1.25rem, 2.5vw, 2.5rem));
+  bottom: 1.25rem;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  height: min(30rem, 62vh);
+  padding-block: 0.4rem;
+  color: var(--quiet);
+  font-size: 0.96rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.reverse-scroll-indicator.is-scroll-driven {
+  top: 0;
+  bottom: auto;
+  transform: translate3d(0, var(--indicator-y, 0), 0);
+  will-change: transform;
+}
+
+.reverse-scroll-indicator__rule {
+  width: 1px;
+  min-height: 1.5rem;
+  flex: 1;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.reverse-scroll-indicator__email {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.reverse-scroll-indicator:hover,
+.reverse-scroll-indicator:focus-visible {
+  color: var(--accent);
 }
 
 .site-shell {
@@ -123,8 +181,7 @@ h1 {
   margin-top: 2rem;
 }
 
-.section-nav a,
-.external-links a {
+.section-nav a {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
@@ -146,25 +203,40 @@ h1 {
 
 .section-nav a:hover,
 .section-nav a:focus-visible,
-.section-nav a.active,
-.external-links a:hover,
-.external-links a:focus-visible {
+.section-nav a.active {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
 }
 
-.external-links {
+.social-icons {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.15rem;
+  gap: 1.25rem;
   margin-top: auto;
+  margin-bottom: 0;
   padding-top: 2rem;
+  padding-left: 0;
+  list-style: none;
 }
 
-.external-links a {
-  padding-inline: 0.55rem;
-  letter-spacing: 0;
-  text-transform: none;
+.social-icons li {
+  line-height: 0;
+}
+
+.social-icon {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(100%);
+  opacity: 0.52;
+  transition: filter var(--ease), opacity var(--ease);
+}
+
+.social-icon:hover {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(88%) saturate(1504%) hue-rotate(162deg) brightness(95%) contrast(91%);
+  opacity: 1;
 }
 
 main {
@@ -205,9 +277,18 @@ section > p:not(.section-label) {
 
 .card {
   display: block;
+  width: calc(100% + 3rem);
+  margin-inline: -1.5rem;
   padding: 1.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: 0.8rem;
+  background: transparent;
+  transition: border-color var(--ease), background var(--ease);
+}
+
+.card:hover,
+.linked-card:focus-visible {
+  border-color: var(--border);
   background: var(--surface);
 }
 
@@ -217,6 +298,12 @@ section > p:not(.section-label) {
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: -0.01em;
+  transition: color var(--ease);
+}
+
+.card:hover h3,
+.linked-card:focus-visible h3 {
+  color: var(--accent);
 }
 
 .card p {
@@ -236,19 +323,11 @@ section > p:not(.section-label) {
 
 .linked-card {
   text-decoration: none;
-  transition: border-color var(--ease), background var(--ease), transform var(--ease);
 }
 
 .linked-card h3 span {
   display: inline-block;
   transition: transform var(--ease);
-}
-
-.linked-card:hover,
-.linked-card:focus-visible {
-  border-color: rgba(255, 255, 255, 0.34);
-  background: var(--surface-hover);
-  transform: translateY(-2px);
 }
 
 .linked-card:hover h3 span,
@@ -352,6 +431,13 @@ footer {
     padding: 2rem 1.5rem 6rem;
   }
 
+  .reverse-scroll-indicator {
+    right: 0.35rem;
+    height: min(22rem, 52vh);
+    gap: 0.5rem;
+    font-size: 0.78rem;
+  }
+
   .intro {
     position: static;
     min-height: 0;
@@ -374,35 +460,10 @@ footer {
   }
 
   .section-nav {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: calc(100% + 3rem);
-    margin: 2rem -1.5rem 0;
-    padding: 0.75rem 1.5rem;
-    overflow-x: auto;
-    background: rgba(30, 30, 30, 0.94);
-    border-block: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    scrollbar-width: none;
-  }
-
-  .section-nav::-webkit-scrollbar {
     display: none;
   }
 
-  .section-nav a {
-    flex: 0 0 auto;
-    padding: 0.42rem 0.7rem;
-  }
-
-  .section-nav a span {
-    display: none;
-  }
-
-  .external-links {
+  .social-icons {
     order: 2;
     margin-top: 0.7rem;
     padding: 0;
@@ -432,7 +493,14 @@ footer {
   }
 
   .card {
+    width: calc(100% + 2.5rem);
+    margin-inline: -1.25rem;
     padding: 1.25rem;
+  }
+
+  #experience .card h3,
+  #projects .card h3 {
+    color: var(--accent-secondary);
   }
 
   footer {
@@ -450,5 +518,9 @@ footer {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reverse-scroll-indicator.is-scroll-driven {
+    will-change: auto;
   }
 }
